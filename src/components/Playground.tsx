@@ -176,12 +176,13 @@ console.log("Progress on HTML/CSS pathway: " + webProgress + "% completed!");
           {/* Sidebar */}
           <div className={styles.sidebar}>
             <h3 className={styles.sidebarTitle}>Choose a Concept</h3>
-            <ul className={styles.templateList}>
+            <ul className={styles.templateList} id="playground-concept-tab-list">
               {templates.map((temp) => (
                 <li key={temp.id}>
                   <button
                     className={`${styles.templateBtn} ${activeTab === temp.id ? styles.templateBtnActive : ""}`}
                     onClick={() => setActiveTab(temp.id)}
+                    id={`playground-concept-tab-${temp.id}`}
                   >
                     <span className={styles.templateBtnIcon}>{temp.icon}</span>
                     <div>
@@ -226,6 +227,8 @@ console.log("Progress on HTML/CSS pathway: " + webProgress + "% completed!");
                 value={code}
                 onChange={(e) => setCode(e.target.value)}
                 spellCheck="false"
+                aria-label="JavaScript Code Editor"
+                id="playground-code-editor"
               />
             </div>
 
@@ -236,6 +239,7 @@ console.log("Progress on HTML/CSS pathway: " + webProgress + "% completed!");
                   className={styles.runBtn}
                   onClick={runCode}
                   aria-label="Run javascript code snippet"
+                  id="playground-run-code-btn"
                 >
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                     <polygon points="5 3 19 12 5 21 5 3"></polygon>
@@ -245,6 +249,7 @@ console.log("Progress on HTML/CSS pathway: " + webProgress + "% completed!");
                 <button
                   className="btn-secondary"
                   style={{ padding: "6px 12px", fontSize: "0.85rem", border: "1px solid rgba(255,255,255,0.06)", background: "rgba(255,255,255,0.03)", color: "#94a3b8" }}
+                  id="playground-reset-code-btn"
                   onClick={() => {
                     const temp = templates.find((t) => t.id === activeTab);
                     if (temp) {

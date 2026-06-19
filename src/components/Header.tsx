@@ -22,7 +22,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.container}>
         {/* Logo */}
-        <Link href="/" className={styles.logo}>
+        <Link href="/" className={styles.logo} id="header-logo-link">
           <div style={{ position: "relative", width: "40px", height: "40px", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom right, #8b5cf6, #7c3aed)", borderRadius: "12px", transform: "rotate(3deg)" }}></div>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{ position: "relative", color: "white" }}>
@@ -43,10 +43,14 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className={styles.nav}>
-          <ul className={styles.navList}>
+          <ul className={styles.navList} id="header-nav-list">
             {menuItems.map((item, index) => (
               <li key={index}>
-                <Link href={item.href} className={styles.navLink}>
+                <Link
+                  href={item.href}
+                  className={styles.navLink}
+                  id={`header-nav-link-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
+                >
                   {item.label}
                 </Link>
               </li>
@@ -61,6 +65,7 @@ export default function Header() {
             onClick={toggleTheme}
             className={styles.themeToggle}
             aria-label="Toggle light/dark theme"
+            id="header-theme-toggle-btn"
           >
             {theme === "light" ? (
               // Moon Icon for Dark Mode prompt
@@ -83,7 +88,11 @@ export default function Header() {
             )}
           </button>
 
-          <Link href="/#playground" className={styles.startBtn}>
+          <Link
+            href="/#playground"
+            className={styles.startBtn}
+            id="header-start-coding-btn"
+          >
             Start Coding
           </Link>
 
@@ -92,6 +101,7 @@ export default function Header() {
             className={`${styles.mobileMenuBtn} ${isMobileMenuOpen ? styles.mobileMenuBtnActive : ""}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle navigation menu"
+            id="header-mobile-menu-btn"
           >
             <span></span>
             <span></span>
@@ -101,16 +111,25 @@ export default function Header() {
 
         {/* Mobile Navigation Drawer */}
         <div className={`${styles.mobileDrawer} ${isMobileMenuOpen ? styles.mobileDrawerActive : ""}`}>
-          <ul className={styles.mobileDrawerList}>
+          <ul className={styles.mobileDrawerList} id="header-mobile-drawer-list">
             {menuItems.map((item, index) => (
               <li key={index} onClick={() => setIsMobileMenuOpen(false)}>
-                <Link href={item.href} className={styles.mobileDrawerLink}>
+                <Link
+                  href={item.href}
+                  className={styles.mobileDrawerLink}
+                  id={`header-mobile-drawer-link-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
+                >
                   {item.label}
                 </Link>
               </li>
             ))}
             <li onClick={() => setIsMobileMenuOpen(false)} style={{ marginTop: "12px" }}>
-              <Link href="/#playground" className="btn-primary" style={{ display: "flex", width: "100%" }}>
+              <Link
+                href="/#playground"
+                className="btn-primary"
+                style={{ display: "flex", width: "100%" }}
+                id="header-mobile-drawer-start-coding-btn"
+              >
                 Start Coding
               </Link>
             </li>

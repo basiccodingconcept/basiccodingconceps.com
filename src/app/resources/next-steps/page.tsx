@@ -274,6 +274,7 @@ export default function NextStepsPage() {
                 key={roadmap.id}
                 onClick={() => setActivePath(roadmap.id)}
                 className={`${styles.selectorCard} ${activePath === roadmap.id ? styles.selectorCardActive : ""}`}
+                id={`roadmap-select-path-${roadmap.id}`}
               >
                 <span className={styles.selectorEmoji}>{getPathwayIcon(roadmap.id, 24, 24)}</span>
                 <h4>{roadmap.title}</h4>
@@ -343,6 +344,7 @@ export default function NextStepsPage() {
                         type="checkbox"
                         checked={isChecked}
                         onChange={() => toggleChecklist(item.id)}
+                        id={`roadmap-checklist-item-${item.id}`}
                       />
                       <span className={styles.checkText}>{item.text}</span>
                     </label>

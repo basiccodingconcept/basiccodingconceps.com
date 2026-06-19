@@ -243,12 +243,13 @@ export default function ExercisesPage() {
                   key={d}
                   onClick={() => setActiveDiff(d as any)}
                   className={`${styles.filterTab} ${activeDiff === d ? styles.filterTabActive : ""}`}
+                  id={`exercise-filter-${d.toLowerCase()}`}
                 >
                   {d} Challenges
                 </button>
               ))}
             </div>
-            <Link href="/playground" className={styles.playgroundBtn}>
+            <Link href="/playground" className={styles.playgroundBtn} id="exercise-playground-link">
               Open Code Playground
             </Link>
           </div>
@@ -292,6 +293,7 @@ export default function ExercisesPage() {
                           type="checkbox"
                           checked={isSolved}
                           onChange={() => toggleSolved(challenge.id)}
+                          id={`exercise-checkbox-${challenge.id}`}
                         />
                         <span className={styles.checkboxLabel}>
                           {isSolved ? "Solved! ✓" : "Mark as Solved"}
@@ -311,6 +313,7 @@ export default function ExercisesPage() {
                     <button
                       onClick={() => setHintId(isHintShown ? null : challenge.id)}
                       className={styles.actionBtn}
+                      id={`exercise-hint-btn-${challenge.id}`}
                     >
                       {isHintShown ? "Hide Hint" : "Get a Hint"}
                     </button>
@@ -318,6 +321,7 @@ export default function ExercisesPage() {
                     <button
                       onClick={() => setExpandedId(isExpanded ? null : challenge.id)}
                       className={styles.viewSolutionsBtn}
+                      id={`exercise-solution-btn-${challenge.id}`}
                     >
                       {isExpanded ? "Hide Solution" : "View Code Solution"}
                     </button>
@@ -340,12 +344,14 @@ export default function ExercisesPage() {
                           <button
                             onClick={() => setSolutionLang("js")}
                             className={`${styles.langBtn} ${solutionLang === "js" ? styles.langBtnActive : ""}`}
+                            id={`exercise-solution-lang-js-${challenge.id}`}
                           >
                             JavaScript
                           </button>
                           <button
                             onClick={() => setSolutionLang("py")}
                             className={`${styles.langBtn} ${solutionLang === "py" ? styles.langBtnActive : ""}`}
+                            id={`exercise-solution-lang-py-${challenge.id}`}
                           >
                             Python
                           </button>

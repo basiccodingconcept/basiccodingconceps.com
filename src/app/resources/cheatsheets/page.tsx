@@ -201,9 +201,11 @@ export default function CheatsheetsPage() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className={styles.searchInput}
+                aria-label="Search syntax cheatsheet"
+                id="cheatsheet-search-input"
               />
               {searchQuery && (
-                <button onClick={() => setSearchQuery("")} className={styles.clearSearchBtn}>
+                <button onClick={() => setSearchQuery("")} className={styles.clearSearchBtn} id="cheatsheet-clear-search-btn">
                   ×
                 </button>
               )}
@@ -213,12 +215,14 @@ export default function CheatsheetsPage() {
               <button
                 onClick={() => setActiveTab("js")}
                 className={`${styles.langBtn} ${activeTab === "js" ? styles.langBtnActive : ""}`}
+                id="cheatsheet-lang-js-btn"
               >
                 JavaScript
               </button>
               <button
                 onClick={() => setActiveTab("py")}
                 className={`${styles.langBtn} ${activeTab === "py" ? styles.langBtnActive : ""}`}
+                id="cheatsheet-lang-py-btn"
               >
                 Python
               </button>
@@ -256,6 +260,7 @@ export default function CheatsheetsPage() {
                         onClick={() => copyToClipboard(activeCode, copiedKey)}
                         className={styles.copyBtn}
                         aria-label="Copy code to clipboard"
+                        id={`cheatsheet-copy-btn-${topic.id}`}
                       >
                         {isCopied ? "Copied! ✓" : "Copy Code"}
                       </button>
@@ -285,7 +290,7 @@ export default function CheatsheetsPage() {
               </div>
               <h3>No syntax match found</h3>
               <p>Try searching for core terms like "loops", "variables", or "functions".</p>
-              <button onClick={() => setSearchQuery("")} className={styles.resetSearchBtn}>
+              <button onClick={() => setSearchQuery("")} className={styles.resetSearchBtn} id="cheatsheet-reset-search-btn">
                 Reset Search
               </button>
             </div>

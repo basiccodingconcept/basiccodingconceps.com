@@ -90,6 +90,7 @@ export default function Quiz({ title, questions, conceptId }: QuizProps) {
                   onClick={() => handleSelectOption(idx)}
                   className={btnClass}
                   disabled={isSubmitted}
+                  id={`quiz-${conceptId}-question-${currentIdx}-option-${idx}`}
                 >
                   {option}
                 </button>
@@ -114,11 +115,12 @@ export default function Quiz({ title, questions, conceptId }: QuizProps) {
                 onClick={handleCheckAnswer}
                 disabled={selectedIdx === null}
                 className={`${styles.actionBtn} ${selectedIdx === null ? styles.actionBtnDisabled : ""}`}
+                id="quiz-check-answer-btn"
               >
                 Check Answer
               </button>
             ) : (
-              <button onClick={handleNext} className={styles.actionBtn}>
+              <button onClick={handleNext} className={styles.actionBtn} id="quiz-next-question-btn">
                 {currentIdx + 1 < questions.length ? "Next Question" : "See Results"}
               </button>
             )}
@@ -141,7 +143,7 @@ export default function Quiz({ title, questions, conceptId }: QuizProps) {
               ? "Flawless score! You have fully mastered this lesson concept!"
               : "Great attempt! Review the lessons material and try again to hit 100%!"}
           </p>
-          <button onClick={handleReset} className={`${styles.resetBtn} btn-secondary`}>
+          <button onClick={handleReset} className={`${styles.resetBtn} btn-secondary`} id="quiz-retry-btn">
             Retry Quiz
           </button>
         </div>
