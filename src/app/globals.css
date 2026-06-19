@@ -96,7 +96,6 @@ body {
   color: #1a1a1a;
   background-color: var(--background);
   transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
-  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
