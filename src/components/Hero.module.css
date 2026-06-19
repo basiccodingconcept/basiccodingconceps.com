@@ -137,7 +137,7 @@
   }
   
   .graphicWrapper {
-    order: -1;
+    /* Keep natural DOM order: heading content first, editor graphic below it on mobile */
   }
 }
 
