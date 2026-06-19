@@ -1,0 +1,296 @@
+/* src/components/LessonPlayground.module.css */
+
+.playgroundContainer {
+  background: transparent;
+  margin: 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Interactive Templates Bar */
+.presetsBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.presetsLabel {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.presetsList {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.presetBtn {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-secondary);
+  padding: 6px 14px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+  box-shadow: var(--card-shadow);
+}
+
+.presetBtn:hover {
+  background: var(--secondary-hover);
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-1px);
+}
+
+/* Editor Window Frame */
+.editorWindow {
+  background: #090e1a; /* Dark editor background */
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  height: 320px; /* Expanded fixed height for editor */
+}
+
+.windowHeader {
+  height: 42px;
+  background: #0c1222;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.windowDots {
+  display: flex;
+  gap: 8px;
+}
+
+.windowDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.windowDotRed { background: #ff5f56; }
+.windowDotYellow { background: #ffbd2e; }
+.windowDotGreen { background: #27c93f; }
+
+.windowTitle {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.editorBody {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+/* Scroll-synced Line Numbers Sidebar */
+.lineNumbers {
+  width: 46px;
+  background: #0a0f1d;
+  border-right: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 18px 0; /* Must match textarea padding */
+  display: block;
+  overflow-y: hidden; /* Scroll position synced via JS */
+  user-select: none;
+}
+
+.lineNumberItem {
+  font-family: var(--font-mono);
+  font-size: 0.95rem; /* Must match textarea */
+  color: #273752;
+  text-align: right;
+  padding-right: 14px;
+  line-height: 1.6; /* Must match textarea line-height */
+  height: 1.6em; /* Must match textarea line-height */
+}
+
+/* Scrollable Textarea */
+.textarea {
+  flex: 1;
+  background: transparent;
+  resize: none;
+  border: none;
+  outline: none;
+  color: #e2e8f0;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding: 18px 18px 18px 12px;
+  white-space: pre;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+/* Console Logs Area */
+.consoleOutput {
+  background: #070a14;
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  height: 140px; /* Expanded console log space */
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--card-shadow);
+  transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.consoleSuccessBorder {
+  border-color: rgba(16, 185, 129, 0.35);
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.04), var(--card-shadow);
+}
+
+.consoleErrorBorder {
+  border-color: rgba(239, 68, 68, 0.35);
+  box-shadow: 0 0 16px rgba(239, 68, 68, 0.04), var(--card-shadow);
+}
+
+.consoleHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  padding-bottom: 6px;
+}
+
+.consoleTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.consoleTitle {
+  font-size: 0.72rem;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.consoleLogsWrapper {
+  flex: 1;
+  overflow-y: auto;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+}
+
+.consoleLog {
+  color: #e2e8f0;
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+
+.consoleError {
+  color: #ef4444;
+  margin-bottom: 4px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.consolePlaceholder {
+  color: #334155;
+  font-style: italic;
+}
+
+.clearBtn {
+  background: transparent;
+  border: none;
+  color: var(--text-tertiary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color var(--transition-speed) ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.clearBtn:hover {
+  color: var(--primary);
+}
+
+.statusBadgeSuccess {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent-green);
+  background-color: rgba(16, 185, 129, 0.08);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.statusBadgeError {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.08);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Footer Control Toolbar */
+.footerBar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.runBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary);
+  color: white !important;
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.2);
+  transition: all var(--transition-speed) ease;
+}
+
+.runBtn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(var(--primary-rgb), 0.3);
+}
+
+.resetBtn {
+  background: transparent;
+  border: 1px solid var(--card-border);
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+}
+
+.resetBtn:hover {
+  background: var(--secondary);
+  color: var(--text-primary);
+  border-color: var(--text-tertiary);
+}

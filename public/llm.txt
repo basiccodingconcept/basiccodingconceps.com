@@ -1,0 +1,50 @@
+# Basic Coding Concepts
+
+Basic Coding Concepts is an interactive, visual, and beginner-friendly web application designed to teach programming fundamentals. It caters to absolute beginners, students, and children through a gamified, hands-on layout.
+
+## Platform Core Features
+
+### 1. Interactive Concepts (/concepts)
+Core computer science and logic principles explained using visual modules, real-world examples, and instant sandbox practice.
+- **Topics**:
+  - What is Coding: Commands and instruction sets.
+  - Variables: Storage containers for data.
+  - Data Types: Strings, Numbers, and Booleans.
+  - Operators: Math and comparisons.
+  - Conditionals: If/Else decision branches.
+  - Loops: For and While repeat blocks.
+  - Functions: Reusable recipes of code.
+  - Arrays: Ordered lists of items.
+  - Objects: Key-value data records.
+  - Debugging: Locating and squashing bugs.
+
+### 2. Theoretical Basics Guides (/basics)
+Curated articles outlining programming history, fundamental system architectures, and setup guides.
+
+### 3. Dedicated Code Playgrounds (/playground)
+In-browser compilers that execute code in real-time without setup:
+- **JavaScript Playground** (/playground/javascript): Sandboxed iframe console.
+- **Python Playground** (/playground/python): Running Pyodide client-side WebAssembly.
+
+### 4. Quizzes & Certificate (/quizzes)
+Multi-choice assessments covering all core lessons. Users who complete all quizzes score-free can generate a printable Certificate of Completion.
+
+### 5. Coding for Kids Section (/for-kids)
+A gamified space using friendly graphics and simplified logic:
+- **Quests 1-10**: Each quest maps to a core concept, translating complex ideas into interactive scenarios (e.g., sorting robot cargo, choosing snowy/sunny weather accessories, loop dance moves, baking cookies functions).
+
+### 6. Interactive Developer Resources (/resources)
+- **Syntax Cheatsheets** (/resources/cheatsheets): Side-by-side comparison of JavaScript and Python syntaxes, searchable and copyable.
+- **Practice Exercises** (/resources/exercises): 6 programming challenges with built-in test runners, collapsible hints, and tabbed code solutions.
+- **Next Steps Roadmaps** (/resources/next-steps): Interactive roadmap builder for Career pathways (Web Dev, Game Dev, Data Science, Automation) with timeframe estimates, recommended frameworks, and a persistable portfolio checklist.
+
+## Site Structure & Navigation
+
+- **Home**: `/` (Features and concepts introduction)
+- **About Us**: `/about` (Platform mission and column breakdown)
+- **Contact Us**: `/contact` (Validated support/contact form)
+- **Glossary**: `/glossary` (A searchable index of 62 programming terms)
+- **Privacy Policy**: `/privacy-policy`
+- **Terms of Service**: `/terms-of-service`
+- **Cookie Policy**: `/cookie-policy`
+- **Disclaimer**: `/disclaimer`

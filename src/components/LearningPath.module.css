@@ -1,0 +1,158 @@
+/* src/components/LearningPath.module.css */
+
+.section {
+  padding: 100px 0;
+  background: var(--secondary);
+  border-top: 1px solid var(--card-border);
+  border-bottom: 1px solid var(--card-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.title {
+  font-size: 2.8rem;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+}
+
+.pathWrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Timeline Line (Desktop only) */
+.timelineLine {
+  display: block;
+  position: absolute;
+  top: 75px;
+  left: 40px;
+  right: 40px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--accent-pink) 50%, var(--primary) 100%);
+  opacity: 0.15;
+  border-radius: var(--radius-full);
+  z-index: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 32px 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  box-shadow: var(--card-shadow);
+  transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+  box-shadow: 0 12px 24px -8px rgba(var(--primary-rgb), 0.25);
+}
+
+.stepNumber {
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, var(--primary), var(--accent-pink));
+  color: white;
+  border-radius: 50%;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(var(--primary-rgb), 0.3);
+}
+
+.icon {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+  transition: transform var(--transition-speed) ease;
+}
+
+.card:hover .icon {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.cardTitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  transition: color var(--transition-speed) ease;
+}
+
+.card:hover .cardTitle {
+  color: var(--primary);
+}
+
+.hoverIndicator {
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+  right: 16px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--accent-pink));
+  border-radius: var(--radius-full) var(--radius-full) 0 0;
+  transform: scaleX(0);
+  transition: transform var(--transition-speed) ease;
+}
+
+.card:hover .hoverIndicator {
+  transform: scaleX(1);
+}
+
+@media (max-width: 1024px) {
+  .timelineLine {
+    display: none;
+  }
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 16px;
+  }
+}

@@ -1,0 +1,324 @@
+/* src/app/resources/cheatsheets/page.module.css */
+
+.main {
+  background: radial-gradient(circle at 10% 25%, rgba(99, 102, 241, 0.03) 0%, transparent 50%),
+              radial-gradient(circle at 90% 75%, rgba(139, 92, 246, 0.02) 0%, transparent 50%);
+  padding: 64px 0 96px;
+  flex: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  color: var(--primary);
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--text-secondary);
+}
+
+/* Controls Bar */
+.controlsBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  border-radius: var(--radius-md);
+  padding: 16px 24px;
+  margin-bottom: 40px;
+  gap: 24px;
+}
+
+.searchWrapper {
+  display: flex;
+  align-items: center;
+  background: var(--secondary);
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  padding: 8px 16px;
+  flex: 1;
+  max-width: 500px;
+  position: relative;
+}
+
+.searchIcon {
+  font-size: 1.1rem;
+  margin-right: 12px;
+  color: var(--text-tertiary);
+}
+
+.searchInput {
+  border: none;
+  background: none;
+  outline: none;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  width: 100%;
+  padding-right: 20px;
+}
+
+.clearSearchBtn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--text-tertiary);
+  font-size: 1.3rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.languageToggle {
+  display: flex;
+  background: var(--secondary);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  padding: 4px;
+}
+
+.langBtn {
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  border-radius: calc(var(--radius-sm) - 2px);
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+}
+
+.langBtnActive {
+  background: var(--card-bg);
+  color: var(--primary);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+/* Grid & Cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.cardTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cardEmoji {
+  font-size: 1.75rem;
+  background: var(--secondary);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+}
+
+.cardTitleRow h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.languageIndicator {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary);
+  background: rgba(99, 102, 241, 0.06);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(99, 102, 241, 0.12);
+}
+
+.cardDesc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 24px;
+  flex-grow: 0;
+}
+
+/* Code block styles */
+.codeContainer {
+  position: relative;
+  background: #0f172a; /* Slate 900 */
+  border-radius: var(--radius-md);
+  margin-bottom: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.codeBlock {
+  padding: 24px;
+  margin: 0;
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: #e2e8f0; /* Slate 200 */
+  line-height: 1.6;
+}
+
+.copyBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+  z-index: 10;
+}
+
+.copyBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f8fafc;
+}
+
+.explanationBox {
+  background: var(--secondary);
+  border: 1px dashed var(--card-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.explanationBox strong {
+  display: block;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+/* No Results state */
+.noResults {
+  text-align: center;
+  padding: 64px 24px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--card-shadow);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.noResults span {
+  font-size: 3.5rem;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.noResults h3 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.noResults p {
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.resetSearchBtn {
+  display: inline-flex;
+  align-items: center;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+}
+
+.resetSearchBtn:hover {
+  background: var(--primary-hover);
+}
+
+/* Responsiveness */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .controlsBar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+  }
+  .searchWrapper {
+    max-width: none;
+  }
+  .languageToggle {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 2.25rem;
+  }
+  .card {
+    padding: 20px;
+  }
+}

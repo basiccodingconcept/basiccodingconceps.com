@@ -1,0 +1,339 @@
+/* src/app/playground/javascript/page.module.css */
+
+.main {
+  min-height: 100vh;
+  background-color: var(--background);
+  color: var(--foreground);
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.titleSection {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
+.breadcrumbLink {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumbLink:hover {
+  color: var(--primary);
+}
+
+.breadcrumbCurrent {
+  color: var(--text-primary);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: #fef3c7;
+  color: #d97706;
+  border: 1px solid #fde68a;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+/* Templates list */
+.templatesBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.templateLabel {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+}
+
+.templateBtn {
+  padding: 6px 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.templateBtn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* Split Pane Sandbox */
+.sandbox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  flex: 1;
+  min-height: 500px;
+}
+
+@media (max-width: 900px) {
+  .sandbox {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 300px;
+  }
+}
+
+/* Editor Panel */
+.editorPane {
+  display: flex;
+  flex-direction: column;
+  background: #1e1e24;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+
+.paneHeader {
+  background: #18181c;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.paneTitle {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #a1a1aa;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.editorArea {
+  position: relative;
+  flex: 1;
+  display: flex;
+}
+
+.lineNumbers {
+  width: 44px;
+  background: #151518;
+  color: #4b5563;
+  padding: 16px 8px;
+  text-align: right;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  user-select: none;
+  line-height: 1.5;
+  border-right: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.textarea {
+  flex: 1;
+  background: transparent;
+  border: none;
+  resize: none;
+  padding: 16px;
+  color: #f4f4f5;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  outline: none;
+}
+
+/* Console Panel */
+.consolePane {
+  display: flex;
+  flex-direction: column;
+  background: #09090b;
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+
+.consoleTitle {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #71717a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.consoleLogs {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 150px;
+}
+
+.logItem {
+  padding: 6px 12px;
+  border-radius: 6px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.logOutput {
+  background: rgba(255, 255, 255, 0.03);
+  color: #e4e4e7;
+  border-left: 3px solid #71717a;
+}
+
+.logError {
+  background: rgba(239, 68, 68, 0.08);
+  color: #fca5a5;
+  border-left: 3px solid #ef4444;
+}
+
+.logEmpty {
+  color: #52525b;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.paneActions {
+  display: flex;
+  gap: 12px;
+}
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #a1a1aa;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.actionBtn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.consoleActionBtn {
+  border-color: rgba(113, 113, 122, 0.3);
+  color: #71717a;
+}
+
+.consoleActionBtn:hover {
+  background: rgba(113, 113, 122, 0.1);
+  color: var(--text-primary);
+}
+
+/* Run / Bottom bar */
+.bottomControls {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.statusInfo {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.buttonsGroup {
+  display: flex;
+  gap: 16px;
+}
+
+.btnReset {
+  padding: 12px 24px;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  color: var(--text-secondary);
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btnReset:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btnRun {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: #d97706; /* JS accent color (gold-ish) */
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.2);
+  transition: all 0.2s ease;
+}
+
+.btnRun:hover {
+  background: #b45309;
+  box-shadow: 0 8px 16px rgba(217, 119, 6, 0.3);
+  transform: translateY(-1px);
+}

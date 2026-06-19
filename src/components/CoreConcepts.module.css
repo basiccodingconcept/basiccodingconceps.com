@@ -1,0 +1,174 @@
+/* src/components/CoreConcepts.module.css */
+
+.section {
+  background: var(--secondary);
+  border-top: 1px solid var(--card-border);
+  border-bottom: 1px solid var(--card-border);
+  padding: 100px 0;
+  position: relative;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.title {
+  font-size: 2.8rem;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: var(--card-shadow);
+  transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary);
+}
+
+:global(html[data-theme="dark"]) .card:hover {
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.iconWrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: rgba(var(--primary-rgb), 0.08);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-speed) ease;
+}
+
+.card:hover .iconWrapper {
+  background: var(--primary);
+  color: white;
+}
+
+.tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid transparent;
+}
+
+.tagBasics {
+  background: rgba(var(--primary-rgb), 0.08);
+  color: var(--primary);
+  border-color: rgba(var(--primary-rgb), 0.12);
+}
+
+.tagFlow {
+  background: rgba(16, 185, 129, 0.08);
+  color: var(--accent-green);
+  border-color: rgba(16, 185, 129, 0.12);
+}
+
+.tagStructures {
+  background: rgba(6, 182, 212, 0.08);
+  color: var(--accent-teal);
+  border-color: rgba(6, 182, 212, 0.12);
+}
+
+.tagOOP {
+  background: rgba(236, 72, 153, 0.08);
+  color: var(--accent-pink);
+  border-color: rgba(236, 72, 153, 0.12);
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cardTitle {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.cardDesc {
+  font-size: 0.98rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.cardLink {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.cardLink svg {
+  transition: transform var(--transition-speed) ease;
+}
+
+.card:hover .cardLink svg {
+  transform: translateX(4px);
+}
+
+.footerActions {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 680px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .title {
+    font-size: 2.2rem;
+  }
+}
