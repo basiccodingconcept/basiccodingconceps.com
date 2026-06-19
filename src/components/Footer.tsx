@@ -57,23 +57,23 @@ export default function Footer() {
             <ul className={styles.links}>
               <li style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <span style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "22px", height: "22px", borderRadius: "50%", background: "var(--secondary)", fontSize: "0.75rem", fontWeight: "700", color: "var(--primary)" }}>1</span>
-                <Link href="/concepts/what-is-coding/" className={styles.link}>What is Coding?</Link>
+                <Link href="/concepts/what-is-coding" className={styles.link}>What is Coding?</Link>
               </li>
               <li style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <span style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "22px", height: "22px", borderRadius: "50%", background: "var(--secondary)", fontSize: "0.75rem", fontWeight: "700", color: "var(--primary)" }}>2</span>
-                <Link href="/concepts/variables/" className={styles.link}>Variables</Link>
+                <Link href="/concepts/variables" className={styles.link}>Variables</Link>
               </li>
               <li style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <span style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "22px", height: "22px", borderRadius: "50%", background: "var(--secondary)", fontSize: "0.75rem", fontWeight: "700", color: "var(--primary)" }}>3</span>
-                <Link href="/concepts/data-types/" className={styles.link}>Data Types</Link>
+                <Link href="/concepts/data-types" className={styles.link}>Data Types</Link>
               </li>
               <li style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <span style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "22px", height: "22px", borderRadius: "50%", background: "var(--secondary)", fontSize: "0.75rem", fontWeight: "700", color: "var(--primary)" }}>4</span>
-                <Link href="/concepts/operators/" className={styles.link}>Operators</Link>
+                <Link href="/concepts/operators" className={styles.link}>Operators</Link>
               </li>
               <li style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <span style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "22px", height: "22px", borderRadius: "50%", background: "var(--secondary)", fontSize: "0.75rem", fontWeight: "700", color: "var(--primary)" }}>5</span>
-                <Link href="/concepts/conditionals/" className={styles.link}>Conditionals</Link>
+                <Link href="/concepts/conditionals" className={styles.link}>Conditionals</Link>
               </li>
               <li style={{ marginTop: "6px" }}>
                 <Link href="/concepts" style={{ fontSize: "0.85rem", color: "#8b5cf6", fontWeight: "700", display: "inline-flex", alignItems: "center", gap: "4px" }}>
@@ -90,8 +90,8 @@ export default function Footer() {
           <div>
             <h4 className={styles.title}>Quick Links</h4>
             <ul className={styles.links}>
-              <li><Link href="/basics/basic-coding-concepts/" className={styles.link}>Basic Coding Concepts</Link></li>
-              <li><Link href="/basics/programming-fundamentals/" className={styles.link}>Programming Fundamentals</Link></li>
+              <li><Link href="/basics/basic-coding-concepts" className={styles.link}>Basic Coding Concepts</Link></li>
+              <li><Link href="/basics/programming-fundamentals" className={styles.link}>Programming Fundamentals</Link></li>
               <li><Link href="/glossary" className={styles.link}>Coding Glossary</Link></li>
               <li><Link href="/playground" className={styles.link}>Code Playground</Link></li>
               <li><Link href="/quizzes" className={styles.link}>Coding Quizzes</Link></li>
@@ -102,9 +102,9 @@ export default function Footer() {
           <div className={styles.newsletterColumn}>
             <h4 className={styles.title}>Resources</h4>
             <ul className={styles.links} style={{ marginBottom: "16px" }}>
-              <li><Link href="/resources/cheatsheets/" className={styles.link}>Cheatsheets</Link></li>
-              <li><Link href="/resources/exercises/" className={styles.link}>Practice Exercises</Link></li>
-              <li><Link href="/resources/next-steps/" className={styles.link}>Next Steps</Link></li>
+              <li><Link href="/resources/cheatsheets" className={styles.link}>Cheatsheets</Link></li>
+              <li><Link href="/resources/exercises" className={styles.link}>Practice Exercises</Link></li>
+              <li><Link href="/resources/next-steps" className={styles.link}>Next Steps</Link></li>
               <li><Link href="/for-kids" className={styles.link}>For Kids</Link></li>
             </ul>
             <div style={{ padding: "16px", background: "rgba(139,92,246,0.04)", borderRadius: "12px", border: "1px solid var(--card-border)" }}>

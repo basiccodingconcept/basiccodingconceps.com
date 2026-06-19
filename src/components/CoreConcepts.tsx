@@ -114,7 +114,7 @@ export default function CoreConcepts() {
             <Link
               key={concept.id}
               id={`home-concept-card-${concept.id}`}
-              href={`/concepts/${concept.id}/`}
+              href={`/concepts/${concept.id}`}
               className={styles.card}
               style={{ position: "relative", overflow: "hidden" }}
             >

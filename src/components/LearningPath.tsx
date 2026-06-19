@@ -180,7 +180,7 @@ export default function LearningPath() {
               <Link
                 key={step.num}
                 id={`home-path-link-${step.slug}`}
-                href={`/concepts/${step.slug}/`}
+                href={`/concepts/${step.slug}`}
                 className={styles.card}
               >
                 {/* Step Number Badge */}
