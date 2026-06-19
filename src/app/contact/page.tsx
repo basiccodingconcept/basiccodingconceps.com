@@ -196,7 +196,7 @@ export default function ContactPage() {
                       </span>
                     )}
 
-                    <button type="submit" className={styles.submitBtn} disabled={isSubmitting}>
+                    <button id="contact-submit-btn" type="submit" className={styles.submitBtn} disabled={isSubmitting}>
                       {isSubmitting ? "Sending Message..." : "Send Message"}
                     </button>
                   </form>
@@ -215,6 +215,7 @@ export default function ContactPage() {
                       A confirmation email has been logged, and an educational developer will review your request and get back to you at <strong>{formData.email}</strong> within 24 hours.
                     </p>
                     <button
+                      id="contact-reset-btn"
                       onClick={() => {
                         setFormData({
                           name: "",

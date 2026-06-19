@@ -30,6 +30,7 @@ function FAQAccordion({ faqs }: { faqs: FAQItem[] }) {
               className={styles.faqHeader}
               onClick={() => toggle(idx)}
               aria-expanded={isOpen}
+              id={`lesson-faq-header-${idx}`}
             >
               <span className={styles.faqQuestion}>{faq.question}</span>
               <span className={styles.faqIcon}>
@@ -297,6 +298,7 @@ export default function LessonPageClient({ lesson }: LessonPageClientProps) {
                   }`}
                   onClick={() => toggleCompleted(lesson.slug)}
                   aria-label="Toggle completion state"
+                  id="lesson-completion-toggle-btn"
                 >
                   {isCurrentCompleted ? (
                     <>
@@ -319,7 +321,7 @@ export default function LessonPageClient({ lesson }: LessonPageClientProps) {
               {/* Navigation Footer links */}
               <footer className={styles.navigationFooter}>
                 {prevLesson ? (
-                  <Link href={`/concepts/${prevLesson.slug}`} className={styles.navLinkBtn}>
+                  <Link id="concept-navigation-prev-btn" href={`/concepts/${prevLesson.slug}`} className={styles.navLinkBtn}>
                     <span className={styles.navLinkSub}>Previous Lesson</span>
                     <span className={styles.navLinkTitle}>
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: "rotate(180deg)", display: "inline-block", marginRight: "4px" }}>
@@ -334,7 +336,7 @@ export default function LessonPageClient({ lesson }: LessonPageClientProps) {
                 )}
 
                 {nextLesson ? (
-                  <Link href={`/concepts/${nextLesson.slug}`} className={styles.navLinkBtn} style={{ textAlign: "right", alignItems: "flex-end" }}>
+                  <Link id="concept-navigation-next-btn" href={`/concepts/${nextLesson.slug}`} className={styles.navLinkBtn} style={{ textAlign: "right", alignItems: "flex-end" }}>
                     <span className={styles.navLinkSub}>Next Lesson</span>
                     <span className={styles.navLinkTitle}>
                       {nextLesson.title}
@@ -345,7 +347,7 @@ export default function LessonPageClient({ lesson }: LessonPageClientProps) {
                     </span>
                   </Link>
                 ) : (
-                  <Link href="/#learning-path" className={styles.navLinkBtn} style={{ textAlign: "right", alignItems: "flex-end" }}>
+                  <Link id="concept-navigation-home-btn" href="/#learning-path" className={styles.navLinkBtn} style={{ textAlign: "right", alignItems: "flex-end" }}>
                     <span className={styles.navLinkSub}>Pathway Complete</span>
                     <span className={styles.navLinkTitle} style={{ color: "var(--accent-green)" }}>
                       Back to Pathway Home

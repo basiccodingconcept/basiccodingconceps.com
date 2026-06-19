@@ -113,6 +113,7 @@ export default function CoreConcepts() {
           {concepts.map((concept) => (
             <Link
               key={concept.id}
+              id={`home-concept-card-${concept.id}`}
               href={`/concepts/${concept.id}/`}
               className={styles.card}
               style={{ position: "relative", overflow: "hidden" }}
@@ -180,7 +181,7 @@ export default function CoreConcepts() {
 
         {/* Footer Actions */}
         <div className={styles.footerActions}>
-          <Link href="/concepts" style={{ display: "inline-flex", alignItems: "center", gap: "6px", color: "var(--primary)", fontWeight: "700", fontSize: "1.1rem" }}>
+          <Link id="home-view-all-concepts-link" href="/concepts" style={{ display: "inline-flex", alignItems: "center", gap: "6px", color: "var(--primary)", fontWeight: "700", fontSize: "1.1rem" }}>
             View all 13 concepts
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>

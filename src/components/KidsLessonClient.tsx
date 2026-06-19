@@ -348,16 +348,16 @@ export default function KidsLessonClient({ lesson }: KidsLessonClientProps) {
               </div>
             </div>
             <div className={styles.controlsRow}>
-              <button onClick={() => addRobotCode("Forward")} className={styles.directionBtn}>Robby.walkRight()</button>
-              <button onClick={() => addRobotCode("Down")} className={styles.directionBtn}>Robby.walkDown()</button>
-              <button onClick={() => addRobotCode("Up")} className={styles.directionBtn}>Robby.walkUp()</button>
+              <button id="kids-robot-walk-right-btn" onClick={() => addRobotCode("Forward")} className={styles.directionBtn}>Robby.walkRight()</button>
+              <button id="kids-robot-walk-down-btn" onClick={() => addRobotCode("Down")} className={styles.directionBtn}>Robby.walkDown()</button>
+              <button id="kids-robot-walk-up-btn" onClick={() => addRobotCode("Up")} className={styles.directionBtn}>Robby.walkUp()</button>
             </div>
-            <div className={styles.controlsRow}>
-              <button onClick={runRobotCode} className={styles.runBtn} disabled={robotRunning}>
-                Run Code
+            <div style={{ display: "flex", gap: "10px", justifyContent: "center" }}>
+              <button id="kids-robot-run-btn" onClick={runRobotCode} className={styles.runBtn} disabled={robotRunning}>
+                {robotRunning ? "Walking..." : "Robby.run() ⚡"}
               </button>
-              <button onClick={() => { setRobotCode([]); setRobotPos({ r: 0, c: 0 }); setRobotMessage("Help Robby walk to the treasure!"); }} className={styles.clearBtn} disabled={robotRunning}>
-                Clear
+              <button id="kids-robot-clear-btn" onClick={() => { setRobotCode([]); setRobotPos({ r: 0, c: 0 }); setRobotMessage("Help Robby walk to the treasure!"); }} className={styles.clearBtn} disabled={robotRunning}>
+                Reset
               </button>
             </div>
             <div style={{ textAlign: "center", fontStyle: "italic", fontWeight: "700", color: lesson.color }}>
@@ -374,6 +374,15 @@ export default function KidsLessonClient({ lesson }: KidsLessonClientProps) {
                 <div
                   key={key}
                   onClick={() => setActiveBox(key)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      setActiveBox(key);
+                    }
+                  }}
+                  role="button"
+                  tabIndex={0}
+                  id={`kids-variables-box-${key}`}
                   className={`${styles.toyBox} ${activeBox === key ? styles.toyBoxActive : ""}`}
                 >
                   <span className={styles.toyBoxLabel}>{key}</span>
@@ -388,6 +397,7 @@ export default function KidsLessonClient({ lesson }: KidsLessonClientProps) {
               {["Car", "Teddy", "Balloon", "Candy", "Dino", "Rocket"].map((toy) => (
                 <button
                   key={toy}
+                  id={`kids-variables-toy-${toy.toLowerCase()}`}
                   onClick={() => setBoxes(prev => ({ ...prev, [activeBox]: toy }))}
                   className={styles.toyItemBtn}
                 >
@@ -409,6 +419,15 @@ export default function KidsLessonClient({ lesson }: KidsLessonClientProps) {
                 <div
                   key={type}
                   onClick={() => dropInContainer(type)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      dropInContainer(type);
+                    }
+                  }}
+                  role="button"
+                  tabIndex={0}
+                  id={`kids-datatypes-bucket-${type.toLowerCase()}`}
                   className={styles.cargoBucket}
                   style={{
                     cursor: selectedSorterItem ? "pointer" : "default",
@@ -435,6 +454,7 @@ export default function KidsLessonClient({ lesson }: KidsLessonClientProps) {
               {sorterItems.map((item) => (
                 <button
                   key={item.id}
+                  id={`kids-datatypes-sorter-${item.id}`}
                   onClick={() => selectSorterItem(item)}
                   className={styles.sorterItem}
                   style={{
@@ -486,6 +506,7 @@ export default function KidsLessonClient({ lesson }: KidsLessonClientProps) {
               {["+", "-", "*"].map((op) => (
                 <button
                   key={op}
+                  id={`kids-operators-btn-${op === "+" ? "add" : op === "-" ? "sub" : "mul"}`}
                   onClick={() => selectOperator(op)}
                   className={styles.toyItemBtn}
                   style={{
@@ -523,6 +544,7 @@ export default function KidsLessonClient({ lesson }: KidsLessonClientProps) {
               {["Sunny", "Rainy", "Snowy"].map((w) => (
                 <button
                   key={w}
+                  id={`kids-conditionals-btn-${w.toLowerCase()}`}
                   onClick={() => setWeather(w)}
                   className={styles.directionBtn}
                   style={{
@@ -585,8 +607,9 @@ export default function KidsLessonClient({ lesson }: KidsLessonClientProps) {
             </div>
 
             <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "12px" }}>
-              <span style={{ fontWeight: "700" }}>Repeat Count:</span>
+              <label htmlFor="kids-repeat-range" style={{ fontWeight: "700" }}>Repeat Count:</label>
               <input
+                id="kids-repeat-range"
                 type="range"
                 min={2}
                 max={5}
@@ -598,7 +621,7 @@ export default function KidsLessonClient({ lesson }: KidsLessonClientProps) {
               <span style={{ fontWeight: "800", color: "#4f46e5" }}>{loopCount} times</span>
             </div>
 
-            <button onClick={runDanceLoop} className={styles.runBtn} style={{ background: "#4f46e5", margin: "0 auto" }} disabled={loopRunning}>
+            <button id="kids-loops-dance-btn" onClick={runDanceLoop} className={styles.runBtn} style={{ background: "#4f46e5", margin: "0 auto" }} disabled={loopRunning}>
               {loopRunning ? `Iterating ${loopCurrentIndex}/${loopCount}...` : "Run Dance Loop"}
             </button>
 
@@ -675,6 +698,7 @@ export default function KidsLessonClient({ lesson }: KidsLessonClientProps) {
                 return (
                   <button
                     key={ing}
+                    id={`kids-functions-ingredient-${ing.toLowerCase()}`}
                     onClick={() => toggleIngredient(ing)}
                     className={styles.directionBtn}
                     style={{
@@ -692,6 +716,7 @@ export default function KidsLessonClient({ lesson }: KidsLessonClientProps) {
             <div className={styles.toysRow}>
               {bakingState === "empty" ? (
                 <button
+                  id="kids-functions-bake-btn"
                   onClick={bakeCookies}
                   disabled={ingredients.length < 2}
                   className={styles.runBtn}
@@ -700,7 +725,7 @@ export default function KidsLessonClient({ lesson }: KidsLessonClientProps) {
                   bakeCookies() ⚡
                 </button>
               ) : (
-                <button onClick={resetOven} className={styles.clearBtn} disabled={bakingState === "mixing" || bakingState === "baking"}>
+                <button id="kids-functions-reset-btn" onClick={resetOven} className={styles.clearBtn} disabled={bakingState === "mixing" || bakingState === "baking"}>
                   Reset Oven
                 </button>
               )}
@@ -732,8 +757,9 @@ export default function KidsLessonClient({ lesson }: KidsLessonClientProps) {
             </div>
 
             <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "10px" }}>
-              <span style={{ fontWeight: "700" }}>Wagon index:</span>
+              <label htmlFor="kids-wagon-index-input" style={{ fontWeight: "700" }}>Wagon index:</label>
               <input
+                id="kids-wagon-index-input"
                 type="number"
                 min={0}
                 max={2}
@@ -747,7 +773,7 @@ export default function KidsLessonClient({ lesson }: KidsLessonClientProps) {
                   textAlign: "center"
                 }}
               />
-              <button onClick={triggerWagonFetch} className={styles.nextQuestBtn} style={{ background: "#7c3aed" }}>
+              <button id="kids-arrays-fetch-btn" onClick={triggerWagonFetch} className={styles.nextQuestBtn} style={{ background: "#7c3aed" }}>
                 train[index]
               </button>
             </div>
@@ -772,8 +798,9 @@ export default function KidsLessonClient({ lesson }: KidsLessonClientProps) {
                 </span>
               </div>
               <div className={styles.petCardRow}>
-                <span className={styles.petCardLabel}>Pet Name:</span>
+                <label htmlFor="kids-pet-name-input" className={styles.petCardLabel}>Pet Name:</label>
                 <input
+                  id="kids-pet-name-input"
                   type="text"
                   value={petName}
                   onChange={(e) => setPetName(e.target.value)}
@@ -790,8 +817,8 @@ export default function KidsLessonClient({ lesson }: KidsLessonClientProps) {
               <div className={styles.petCardRow}>
                 <span className={styles.petCardLabel}>Species:</span>
                 <div style={{ display: "flex", gap: "6px" }}>
-                  <button onClick={() => setPetSpecies("Dog")} style={{ opacity: petSpecies === "Dog" ? 1 : 0.4 }} className={styles.directionBtn}>Dog</button>
-                  <button onClick={() => setPetSpecies("Cat")} style={{ opacity: petSpecies === "Cat" ? 1 : 0.4 }} className={styles.directionBtn}>Cat</button>
+                  <button id="kids-objects-species-dog" onClick={() => setPetSpecies("Dog")} style={{ opacity: petSpecies === "Dog" ? 1 : 0.4 }} className={styles.directionBtn}>Dog</button>
+                  <button id="kids-objects-species-cat" onClick={() => setPetSpecies("Cat")} style={{ opacity: petSpecies === "Cat" ? 1 : 0.4 }} className={styles.directionBtn}>Cat</button>
                 </div>
               </div>
               <div className={styles.petCardRow}>
@@ -800,6 +827,8 @@ export default function KidsLessonClient({ lesson }: KidsLessonClientProps) {
                   {["Brown", "Orange", "Black"].map(c => (
                     <button
                       key={c}
+                      id={`kids-objects-color-${c.toLowerCase()}`}
+                      aria-label={`Select fur color ${c}`}
                       onClick={() => setPetColor(c)}
                       style={{ opacity: petColor === c ? 1 : 0.4 }}
                       className={styles.directionBtn}
@@ -819,9 +848,9 @@ export default function KidsLessonClient({ lesson }: KidsLessonClientProps) {
               <div className={styles.petCardRow}>
                 <span className={styles.petCardLabel}>Age:</span>
                 <div style={{ display: "flex", gap: "6px", alignItems: "center" }}>
-                  <button onClick={() => setPetAge(prev => Math.max(1, prev - 1))} className={styles.directionBtn}>-</button>
+                  <button id="kids-objects-age-minus" aria-label="Decrease age" onClick={() => setPetAge(prev => Math.max(1, prev - 1))} className={styles.directionBtn}>-</button>
                   <span style={{ fontWeight: "800" }}>{petAge} yrs</span>
-                  <button onClick={() => setPetAge(prev => Math.min(10, prev + 1))} className={styles.directionBtn}>+</button>
+                  <button id="kids-objects-age-plus" aria-label="Increase age" onClick={() => setPetAge(prev => Math.min(10, prev + 1))} className={styles.directionBtn}>+</button>
                 </div>
               </div>
             </div>
@@ -838,7 +867,21 @@ export default function KidsLessonClient({ lesson }: KidsLessonClientProps) {
             <div className={styles.codeEditor}>
               {/* Bugs overlay */}
               {!bugsSquashed[1] && (
-                <div onClick={() => squashBug(1)} className={styles.bug} style={{ top: "15px", right: "80px" }}>
+                <div
+                  onClick={() => squashBug(1)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      squashBug(1);
+                    }
+                  }}
+                  role="button"
+                  tabIndex={0}
+                  aria-label="Squash bug 1"
+                  id="kids-debugging-bug-1"
+                  className={styles.bug}
+                  style={{ top: "15px", right: "80px" }}
+                >
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ color: '#ef4444' }}>
                     <circle cx="12" cy="12" r="10" />
                     <line x1="12" y1="8" x2="12" y2="16" />
@@ -847,7 +890,21 @@ export default function KidsLessonClient({ lesson }: KidsLessonClientProps) {
                 </div>
               )}
               {!bugsSquashed[2] && (
-                <div onClick={() => squashBug(2)} className={styles.bug} style={{ top: "50px", left: "90px" }}>
+                <div
+                  onClick={() => squashBug(2)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      squashBug(2);
+                    }
+                  }}
+                  role="button"
+                  tabIndex={0}
+                  aria-label="Squash bug 2"
+                  id="kids-debugging-bug-2"
+                  className={styles.bug}
+                  style={{ top: "50px", left: "90px" }}
+                >
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ color: '#ef4444' }}>
                     <circle cx="12" cy="12" r="10" />
                     <line x1="12" y1="8" x2="12" y2="16" />
@@ -856,7 +913,21 @@ export default function KidsLessonClient({ lesson }: KidsLessonClientProps) {
                 </div>
               )}
               {!bugsSquashed[3] && (
-                <div onClick={() => squashBug(3)} className={styles.bug} style={{ bottom: "15px", right: "120px" }}>
+                <div
+                  onClick={() => squashBug(3)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      squashBug(3);
+                    }
+                  }}
+                  role="button"
+                  tabIndex={0}
+                  aria-label="Squash bug 3"
+                  id="kids-debugging-bug-3"
+                  className={styles.bug}
+                  style={{ bottom: "15px", right: "120px" }}
+                >
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ color: '#ef4444' }}>
                     <circle cx="12" cy="12" r="10" />
                     <line x1="12" y1="8" x2="12" y2="16" />
@@ -1004,6 +1075,7 @@ export default function KidsLessonClient({ lesson }: KidsLessonClientProps) {
                         return (
                           <button
                             key={idx}
+                            id={`kids-quiz-option-${idx}`}
                             onClick={() => handleSelectQuizOption(idx)}
                             className={optStyle}
                             disabled={quizSubmitted}
@@ -1027,6 +1099,7 @@ export default function KidsLessonClient({ lesson }: KidsLessonClientProps) {
                       </span>
                       {selectedQuizOption !== null && (
                         <button
+                          id="kids-quiz-submit-continue-btn"
                           onClick={quizSubmitted ? handleNextQuizQuestion : handleCheckQuizAnswer}
                           className={styles.nextQuestBtn}
                         >
@@ -1046,7 +1119,7 @@ export default function KidsLessonClient({ lesson }: KidsLessonClientProps) {
                     <p style={{ color: "var(--text-secondary)", marginBottom: "16px" }}>
                       You scored **{quizScore} out of {lesson.quizQuestions.length}** correct!
                     </p>
-                    <button onClick={handleResetQuiz} className={styles.nextQuestBtn}>
+                    <button id="kids-quiz-retry-btn" onClick={handleResetQuiz} className={styles.nextQuestBtn}>
                       Try Again
                     </button>
                   </div>
@@ -1056,18 +1129,18 @@ export default function KidsLessonClient({ lesson }: KidsLessonClientProps) {
               {/* Navigation buttons */}
               <div style={{ display: "flex", justifyContent: "space-between", marginTop: "16px" }}>
                 {lesson.prevSlug ? (
-                  <Link href={`/for-kids/${lesson.prevSlug}`} className={styles.nextQuestBtn} style={{ background: "var(--secondary)", color: "var(--text-primary)" }}>
+                  <Link id="kids-navigation-back-link" href={`/for-kids/${lesson.prevSlug}`} className={styles.nextQuestBtn} style={{ background: "var(--secondary)", color: "var(--text-primary)" }}>
                     &larr; Back to Quest {lesson.num - 1}
                   </Link>
                 ) : (
                   <div />
                 )}
                 {lesson.nextSlug ? (
-                  <Link href={`/for-kids/${lesson.nextSlug}`} className={styles.nextQuestBtn}>
+                  <Link id="kids-navigation-next-link" href={`/for-kids/${lesson.nextSlug}`} className={styles.nextQuestBtn}>
                     Go to Quest {lesson.num + 1} &rarr;
                   </Link>
                 ) : (
-                  <Link href="/for-kids" className={styles.nextQuestBtn}>
+                  <Link id="kids-navigation-map-link" href="/for-kids" className={styles.nextQuestBtn}>
                     Back to Map
                   </Link>
                 )}

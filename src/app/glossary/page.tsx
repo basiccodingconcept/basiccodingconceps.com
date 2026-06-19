@@ -147,12 +147,15 @@ export default function GlossaryPage() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className={styles.searchInput}
+                aria-label="Search coding glossary terms"
+                id="glossary-search-input"
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery("")}
                   className={styles.clearButton}
                   aria-label="Clear search"
+                  id="glossary-clear-search-btn"
                 >
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                     <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -169,6 +172,7 @@ export default function GlossaryPage() {
                   key={cat.id}
                   onClick={() => setSelectedCategory(cat.id)}
                   className={`${styles.filterPill} ${selectedCategory === cat.id ? styles.filterPillActive : ""}`}
+                  id={`glossary-category-pill-${cat.id}`}
                 >
                   <span>{cat.label}</span>
                   <span className={styles.pillCount}>{cat.count}</span>
@@ -186,6 +190,7 @@ export default function GlossaryPage() {
                     onClick={() => isAvailable && setSelectedLetter(letter)}
                     className={`${styles.alphabetBtn} ${selectedLetter === letter ? styles.alphabetBtnActive : ""} ${!isAvailable ? styles.alphabetBtnDisabled : ""}`}
                     disabled={!isAvailable}
+                    id={`glossary-alphabet-btn-${letter}`}
                   >
                     {letter === "all" ? "All" : letter}
                   </button>
@@ -252,6 +257,7 @@ export default function GlossaryPage() {
                               key={rIdx}
                               onClick={() => handleTermClick(related)}
                               className={styles.relatedTag}
+                              id={`glossary-related-tag-${item.term.toLowerCase().replace(/\s+/g, "-")}-${related.toLowerCase().replace(/\s+/g, "-")}`}
                             >
                               {related}
                             </button>
@@ -276,7 +282,7 @@ export default function GlossaryPage() {
               <p className={styles.emptyStateText}>
                 We couldn't find any terms matching your criteria. Try resetting the filters or modifying your search.
               </p>
-              <button onClick={handleReset} className={styles.resetBtn}>
+              <button id="glossary-empty-reset-btn" onClick={handleReset} className={styles.resetBtn}>
                 Reset Search Filters
               </button>
             </div>

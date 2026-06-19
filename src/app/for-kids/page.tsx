@@ -150,6 +150,7 @@ export default function KidsOverviewPage() {
               {lessonsArray.map((lesson) => (
                 <Link
                   key={lesson.slug}
+                  id={`kids-quest-card-link-${lesson.slug}`}
                   href={`/for-kids/${lesson.slug}`}
                   className={`${styles.card} ${styles[lesson.borderClass]}`}
                 >
@@ -318,7 +319,7 @@ export default function KidsOverviewPage() {
           <section className={styles.ctaArea}>
             <h2 className={styles.ctaTitle}>Ready to Start Your Adventure?</h2>
             <p className={styles.ctaDesc}>Jump into Quest 1 and discover how you can talk to computer systems!</p>
-            <Link href="/for-kids/what-is-coding" className={styles.ctaBtn}>
+            <Link id="kids-launch-quest-1-btn" href="/for-kids/what-is-coding" className={styles.ctaBtn}>
               <span>Launch Quest 1</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                 <polyline points="9 18 15 12 9 6"></polyline>

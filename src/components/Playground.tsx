@@ -222,12 +222,12 @@ console.log("Progress on HTML/CSS pathway: " + webProgress + "% completed!");
               </div>
 
               {/* Editable Text Area */}
+              <label htmlFor="playground-code-editor" className="sr-only">JavaScript Code Editor</label>
               <textarea
                 className={styles.textarea}
                 value={code}
                 onChange={(e) => setCode(e.target.value)}
                 spellCheck="false"
-                aria-label="JavaScript Code Editor"
                 id="playground-code-editor"
               />
             </div>

@@ -270,7 +270,7 @@ export default function ConceptsPage() {
               <div className={styles.trackConnector}></div>
 
               {conceptList.map((concept) => (
-                <Link key={concept.id} href={`/concepts/${concept.id}/`} className={styles.trackItem}>
+                <Link key={concept.id} id={`concept-track-link-${concept.id}`} href={`/concepts/${concept.id}/`} className={styles.trackItem}>
                   <div className={styles.trackNum}>{concept.num}</div>
                   <div className={styles.trackIcon}>{concept.icon}</div>
                   <span className={styles.trackTitle}>{concept.shortTitle}</span>
@@ -282,7 +282,7 @@ export default function ConceptsPage() {
           {/* Detailed Concepts Grid */}
           <div className={styles.grid}>
             {conceptList.map((concept) => (
-              <Link key={concept.id} href={`/concepts/${concept.id}/`} className={styles.card}>
+              <Link key={concept.id} id={`concept-card-link-${concept.id}`} href={`/concepts/${concept.id}/`} className={styles.card}>
                 <div className={styles.cardGlow}></div>
                 
                 {/* Top row with icon & numbering */}
@@ -337,7 +337,7 @@ export default function ConceptsPage() {
               <p className={styles.ctaDesc}>
                 Jump straight into our very first concept, "What is Coding?", and learn how instructions guide computers.
               </p>
-              <Link href="/concepts/what-is-coding/" className={styles.ctaBtn}>
+              <Link id="concepts-start-btn" href="/concepts/what-is-coding/" className={styles.ctaBtn}>
                 Start from the Beginning
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12"/>

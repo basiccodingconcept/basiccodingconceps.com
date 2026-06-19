@@ -222,7 +222,7 @@ export default async function BasicGuidePage({ params }: PageProps) {
           {/* Bottom navigation */}
           <nav className={styles.bottomNav}>
             {prevGuide ? (
-              <Link href={`/basics/${prevGuide.slug}`} className={styles.navCard}>
+              <Link id="basics-prev-link" href={`/basics/${prevGuide.slug}`} className={styles.navCard}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <line x1="19" y1="12" x2="5" y2="12"></line>
                   <polyline points="12 19 5 12 12 5"></polyline>
@@ -233,7 +233,7 @@ export default async function BasicGuidePage({ params }: PageProps) {
                 </div>
               </Link>
             ) : (
-              <Link href="/basics" className={styles.navCard}>
+              <Link id="basics-overview-back-link" href="/basics" className={styles.navCard}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <line x1="19" y1="12" x2="5" y2="12"></line>
                   <polyline points="12 19 5 12 12 5"></polyline>
@@ -246,7 +246,7 @@ export default async function BasicGuidePage({ params }: PageProps) {
             )}
 
             {nextGuide ? (
-              <Link href={`/basics/${nextGuide.slug}`} className={`${styles.navCard} ${styles.navCardRight}`}>
+              <Link id="basics-next-link" href={`/basics/${nextGuide.slug}`} className={`${styles.navCard} ${styles.navCardRight}`}>
                 <div className={styles.navCardContent}>
                   <span className={styles.navCardLabel}>Next Guide</span>
                   <span className={styles.navCardTitle}>{nextGuide.title}</span>
@@ -257,7 +257,7 @@ export default async function BasicGuidePage({ params }: PageProps) {
                 </svg>
               </Link>
             ) : (
-              <Link href="/concepts" className={`${styles.navCard} ${styles.navCardRight}`}>
+              <Link id="basics-concepts-link" href="/concepts" className={`${styles.navCard} ${styles.navCardRight}`}>
                 <div className={styles.navCardContent}>
                   <span className={styles.navCardLabel}>Next Step</span>
                   <span className={styles.navCardTitle}>Interactive Concepts</span>

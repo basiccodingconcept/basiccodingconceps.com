@@ -171,6 +171,7 @@ export default function JavascriptPlayground() {
               {Object.keys(PRESETS).map((key) => (
                 <button
                   key={key}
+                  id={`js-playground-preset-${key}`}
                   onClick={() => loadPreset(key)}
                   className={styles.templateBtn}
                 >
@@ -193,6 +194,7 @@ export default function JavascriptPlayground() {
                   code_editor.js
                 </span>
                 <button
+                  id="js-playground-clear-btn"
                   onClick={() => setCode("")}
                   className={styles.actionBtn}
                   title="Clear editor code"
@@ -207,7 +209,9 @@ export default function JavascriptPlayground() {
                     <div key={num}>{num}</div>
                   ))}
                 </div>
+                <label htmlFor="js-playground-code-editor" className="sr-only">JavaScript editor</label>
                 <textarea
+                  id="js-playground-code-editor"
                   value={code}
                   onChange={(e) => setCode(e.target.value)}
                   className={styles.textarea}
@@ -264,10 +268,10 @@ export default function JavascriptPlayground() {
               Supports ES6 JavaScript. Executed locally in a safe sandbox.
             </div>
             <div className={styles.buttonsGroup}>
-              <button onClick={resetCode} className={styles.btnReset}>
+              <button id="js-playground-reset-btn" onClick={resetCode} className={styles.btnReset}>
                 Reset Code
               </button>
-              <button onClick={runCode} className={styles.btnRun}>
+              <button id="js-playground-run-btn" onClick={runCode} className={styles.btnRun}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                   <polygon points="5 3 19 12 5 21 5 3"></polygon>
                 </svg>

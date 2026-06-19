@@ -33,14 +33,14 @@ export default function Hero() {
             Master programming fundamentals through <strong>interactive visualizations</strong>, hands-on coding exercises, and step-by-step explanations. <span style={{ color: "#8b5cf6", fontWeight: "600" }}>No experience needed.</span>
           </p>
           <div className={styles.ctaGroup}>
-            <Link href="#playground" className="btn-primary" style={{ background: "linear-gradient(135deg, #8b5cf6, #6d28d9)", border: "none" }}>
+            <Link id="hero-start-learning-btn" href="#playground" className="btn-primary" style={{ background: "linear-gradient(135deg, #8b5cf6, #6d28d9)", border: "none" }}>
               Start Learning Free
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
             </Link>
-            <Link href="#concepts" className="btn-secondary">
+            <Link id="hero-browse-concepts-btn" href="#concepts" className="btn-secondary">
               Browse Concepts
             </Link>
           </div>

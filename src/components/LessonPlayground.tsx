@@ -131,16 +131,16 @@ export default function LessonPlayground({ initialCode }: LessonPlaygroundProps)
       <div className={styles.presetsBar}>
         <span className={styles.presetsLabel}>Load Preset:</span>
         <div className={styles.presetsList}>
-          <button className={styles.presetBtn} onClick={() => loadPreset("variables")} aria-label="Load variables template">
+          <button id="lesson-preset-variables" className={styles.presetBtn} onClick={() => loadPreset("variables")} aria-label="Load variables template">
             Variables
           </button>
-          <button className={styles.presetBtn} onClick={() => loadPreset("logic")} aria-label="Load conditionals template">
+          <button id="lesson-preset-logic" className={styles.presetBtn} onClick={() => loadPreset("logic")} aria-label="Load conditionals template">
             Conditionals
           </button>
-          <button className={styles.presetBtn} onClick={() => loadPreset("loops")} aria-label="Load loops template">
+          <button id="lesson-preset-loops" className={styles.presetBtn} onClick={() => loadPreset("loops")} aria-label="Load loops template">
             Loops
           </button>
-          <button className={styles.presetBtn} onClick={() => loadPreset("functions")} aria-label="Load functions template">
+          <button id="lesson-preset-functions" className={styles.presetBtn} onClick={() => loadPreset("functions")} aria-label="Load functions template">
             Functions
           </button>
         </div>
@@ -169,6 +169,7 @@ export default function LessonPlayground({ initialCode }: LessonPlaygroundProps)
           </div>
 
           {/* Text Area */}
+          <label htmlFor="lesson-code-editor" className="sr-only">Code editor</label>
           <textarea
             ref={textareaRef}
             className={styles.textarea}
@@ -176,7 +177,7 @@ export default function LessonPlayground({ initialCode }: LessonPlaygroundProps)
             onChange={(e) => setCode(e.target.value)}
             onScroll={handleScroll}
             spellCheck="false"
-            aria-label="Code editor"
+            id="lesson-code-editor"
           />
         </div>
       </div>
@@ -194,6 +195,7 @@ export default function LessonPlayground({ initialCode }: LessonPlaygroundProps)
             )}
           </div>
           <button
+            id="lesson-playground-clear-btn"
             className={styles.clearBtn}
             onClick={() => {
               setLogs([]);
@@ -226,6 +228,7 @@ export default function LessonPlayground({ initialCode }: LessonPlaygroundProps)
       {/* Footer Controls */}
       <div className={styles.footerBar}>
         <button
+          id="lesson-playground-run-btn"
           className={styles.runBtn}
           onClick={runCode}
           aria-label="Run code"
@@ -237,6 +240,7 @@ export default function LessonPlayground({ initialCode }: LessonPlaygroundProps)
         </button>
 
         <button
+          id="lesson-playground-reset-btn"
           className={styles.resetBtn}
           onClick={resetCode}
           aria-label="Reset code"

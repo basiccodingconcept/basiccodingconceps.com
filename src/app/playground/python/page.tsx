@@ -233,6 +233,7 @@ sys.stderr = io.StringIO()
               {Object.keys(PRESETS).map((key) => (
                 <button
                   key={key}
+                  id={`python-playground-preset-${key}`}
                   onClick={() => loadPreset(key)}
                   className={styles.templateBtn}
                   disabled={isLoading}
@@ -265,6 +266,7 @@ sys.stderr = io.StringIO()
                   main.py
                 </span>
                 <button
+                  id="python-playground-clear-btn"
                   onClick={() => setCode("")}
                   className={styles.actionBtn}
                   title="Clear editor code"
@@ -280,7 +282,9 @@ sys.stderr = io.StringIO()
                     <div key={num}>{num}</div>
                   ))}
                 </div>
+                <label htmlFor="python-playground-code-editor" className="sr-only">Python editor</label>
                 <textarea
+                  id="python-playground-code-editor"
                   value={code}
                   onChange={(e) => setCode(e.target.value)}
                   className={styles.textarea}
@@ -339,10 +343,10 @@ sys.stderr = io.StringIO()
               Runs locally in your browser using Pyodide WebAssembly.
             </div>
             <div className={styles.buttonsGroup}>
-              <button onClick={resetCode} className={styles.btnReset} disabled={isLoading}>
+              <button id="python-playground-reset-btn" onClick={resetCode} className={styles.btnReset} disabled={isLoading}>
                 Reset Code
               </button>
-              <button onClick={runCode} className={styles.btnRun} disabled={isLoading}>
+              <button id="python-playground-run-btn" onClick={runCode} className={styles.btnRun} disabled={isLoading}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                   <polygon points="5 3 19 12 5 21 5 3"></polygon>
                 </svg>

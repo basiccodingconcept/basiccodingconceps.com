@@ -395,7 +395,7 @@ export default function QuizzesPage() {
                 Take a 10-question randomized comprehensive exam covering variables, arrays, loops, operators, structures, and debugging. Score 70% or more to unlock your Certificate of Completion.
               </p>
             </div>
-            <button onClick={startFinalAssessment} className={styles.ultimateBtn}>
+             <button id="quizzes-take-final-btn" onClick={startFinalAssessment} className={styles.ultimateBtn}>
               Take Final Assessment
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <polyline points="9 18 15 12 9 6"></polyline>
@@ -416,6 +416,8 @@ export default function QuizzesPage() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className={styles.searchInput}
+                aria-label="Search quizzes by topic"
+                id="quizzes-search-input"
               />
             </div>
             <div className={styles.filters}>
@@ -426,6 +428,7 @@ export default function QuizzesPage() {
                   className={`${styles.filterBtn} ${
                     selectedLevel === level ? styles.activeFilterBtn : ""
                   }`}
+                  id={`quizzes-filter-${level.toLowerCase()}`}
                 >
                   {level === "All" ? "All Levels" : level}
                 </button>
@@ -442,7 +445,20 @@ export default function QuizzesPage() {
                 const isCompleted = record?.completed;
 
                 return (
-                  <div key={slug} onClick={() => startQuiz(quiz)} className={styles.card}>
+                  <div
+                    key={slug}
+                    onClick={() => startQuiz(quiz)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        startQuiz(quiz);
+                      }
+                    }}
+                    role="button"
+                    tabIndex={0}
+                    id={`quizzes-concept-card-${slug}`}
+                    className={styles.card}
+                  >
                     <div className={styles.cardHeader}>
                       <div className={styles.cardIcon}>
                         {renderIcon(slug)}
@@ -496,7 +512,7 @@ export default function QuizzesPage() {
           <div className={styles.workspace}>
             <div className={styles.workspaceHeader}>
               <span className={styles.workspaceTitle}>{activeQuiz.title}</span>
-              <button onClick={closeWorkspace} className={styles.closeBtn} title="Quit Quiz">
+              <button id="quizzes-close-workspace-btn" onClick={closeWorkspace} className={styles.closeBtn} title="Quit Quiz" aria-label="Close quiz workspace">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <line x1="18" y1="6" x2="6" y2="18"></line>
                   <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -548,6 +564,7 @@ export default function QuizzesPage() {
                       return (
                         <button
                           key={idx}
+                          id={`quizzes-option-${idx}`}
                           onClick={() => handleSelectOption(idx)}
                           className={btnStyle}
                           disabled={hasSubmitted}
@@ -596,11 +613,12 @@ export default function QuizzesPage() {
                       onClick={handleSubmitAnswer}
                       disabled={selectedOption === null}
                       className={styles.submitBtn}
+                      id="quizzes-submit-answer-btn"
                     >
                       Submit Answer
                     </button>
                   ) : (
-                    <button onClick={handleNextQuestion} className={styles.submitBtn}>
+                    <button onClick={handleNextQuestion} className={styles.submitBtn} id="quizzes-next-question-btn">
                       {currentQuestionIdx + 1 < activeQuestions.length ? "Next Question" : "See Results"}
                     </button>
                   )}
@@ -623,9 +641,10 @@ export default function QuizzesPage() {
 
                     {/* Certificate view */}
                     <div className={styles.certInputWrapper}>
-                      <label className={styles.certInputLabel}>Enter name for certificate:</label>
+                      <label htmlFor="cert-name-input" className={styles.certInputLabel}>Enter name for certificate:</label>
                       <input
                         type="text"
+                        id="cert-name-input"
                         value={certName}
                         onChange={(e) => setCertName(e.target.value)}
                         className={styles.certInput}

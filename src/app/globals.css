@@ -157,6 +157,15 @@ button, input, select {
   outline: none;
 }
 
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
 /* Animations */
 @keyframes pulseGlow {
   0%, 100% {
@@ -249,4 +258,17 @@ button, input, select {
   .section-padding {
     padding: 64px 0;
   }
+}
+
+/* Screen reader only helper for accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }

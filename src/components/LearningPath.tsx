@@ -179,6 +179,7 @@ export default function LearningPath() {
             {steps.map((step) => (
               <Link
                 key={step.num}
+                id={`home-path-link-${step.slug}`}
                 href={`/concepts/${step.slug}/`}
                 className={styles.card}
               >

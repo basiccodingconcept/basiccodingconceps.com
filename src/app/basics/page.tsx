@@ -115,6 +115,7 @@ export default function BasicsPage() {
             {guides.map((guide, idx) => (
               <Link
                 key={idx}
+                id={`basics-guide-link-${guide.slug}`}
                 href={`/basics/${guide.slug}`}
                 className={`${styles.card} ${guide.themeClass}`}
               >
@@ -178,7 +179,7 @@ export default function BasicsPage() {
             <p className={styles.ctaDesc}>
               Start with our comprehensive &quot;Basic Coding Concepts&quot; guide — the perfect foundation for absolute beginners.
             </p>
-            <Link href="/basics/basic-coding-concepts" className={styles.ctaButton}>
+             <Link id="basics-recommended-start-btn" href="/basics/basic-coding-concepts" className={styles.ctaButton}>
               <span>Start with Basic Coding Concepts</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
