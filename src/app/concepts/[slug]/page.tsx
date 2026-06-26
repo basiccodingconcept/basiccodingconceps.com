@@ -29,10 +29,28 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: `${lesson.title} - Learn Programming Fundamentals | Basic Coding Concepts`,
     description: lesson.desc,
     keywords: `${lesson.title.toLowerCase()}, coding basics, programming for beginners, computer science fundamentals, interactive coding, coding sandbox`,
+    alternates: {
+      canonical: `https://www.basiccodingconcepts.online/concepts/${slug}`,
+    },
     openGraph: {
       title: `${lesson.title} - Learn Programming Fundamentals | Basic Coding Concepts`,
       description: lesson.desc,
+      url: `https://www.basiccodingconcepts.online/concepts/${slug}`,
       type: "article",
+      images: [
+        {
+          url: "/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: `${lesson.title} - Basic Coding Concepts`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${lesson.title} - Basic Coding Concepts`,
+      description: lesson.desc,
+      images: ["/og-image.png"],
     },
   };
 }
