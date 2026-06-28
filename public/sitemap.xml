@@ -1,282 +1,327 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- ===== STATIC PAGES ===== -->
+  <!-- ═══════════════ STATIC PAGES ═══════════════ -->
+
   <url>
-    <loc>https://www.basiccodingconcepts.online</loc>
-    <lastmod>2026-06-26</lastmod>
+    <loc>https://www.basiccodingconcepts.online/</loc>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/concepts</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/basics</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/for-kids</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-  <url>
-    <loc>https://www.basiccodingconcepts.online/about</loc>
-    <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.basiccodingconcepts.online/contact</loc>
-    <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.basiccodingconcepts.online/glossary</loc>
-    <lastmod>2026-06-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/playground</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/playground/javascript</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/playground/python</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/quizzes</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <url>
+    <loc>https://www.basiccodingconcepts.online/glossary</loc>
+    <lastmod>2025-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/resources/cheatsheets</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/resources/exercises</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/resources/next-steps</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
+
+  <url>
+    <loc>https://www.basiccodingconcepts.online/about</loc>
+    <lastmod>2025-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.basiccodingconcepts.online/contact</loc>
+    <lastmod>2025-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/privacy-policy</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.4</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/terms-of-service</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.4</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/cookie-policy</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.4</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/disclaimer</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.4</priority>
   </url>
 
-  <!-- ===== CONCEPT LESSONS (13 pages) ===== -->
+  <!-- ═══════════════ CONCEPTS LESSONS ═══════════════ -->
+
   <url>
     <loc>https://www.basiccodingconcepts.online/concepts/what-is-coding</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/concepts/comments</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/concepts/variables</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/concepts/data-types</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/concepts/strings</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/concepts/operators</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/concepts/conditionals</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/concepts/loops</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/concepts/functions</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/concepts/arrays</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/concepts/objects</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/concepts/input-output</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/concepts/debugging</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 
-  <!-- ===== BASICS PAGES (4 pages) ===== -->
+  <!-- ═══════════════ BASICS GUIDES ═══════════════ -->
+
   <url>
     <loc>https://www.basiccodingconcepts.online/basics/basic-coding-concepts</loc>
-    <lastmod>2026-06-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.basiccodingconcepts.online/basics/programming-fundamentals</loc>
-    <lastmod>2026-06-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.basiccodingconcepts.online/basics/coding-basics</loc>
-    <lastmod>2026-06-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.basiccodingconcepts.online/basics/programming-basics</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
 
-  <!-- ===== FOR KIDS LESSONS (10 pages) ===== -->
+  <url>
+    <loc>https://www.basiccodingconcepts.online/basics/programming-fundamentals</loc>
+    <lastmod>2025-06-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.basiccodingconcepts.online/basics/coding-basics</loc>
+    <lastmod>2025-06-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://www.basiccodingconcepts.online/basics/programming-basics</loc>
+    <lastmod>2025-06-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- ═══════════════ FOR KIDS LESSONS ═══════════════ -->
+
   <url>
     <loc>https://www.basiccodingconcepts.online/for-kids/what-is-coding</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/for-kids/variables</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/for-kids/data-types</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/for-kids/operators</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/for-kids/conditionals</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/for-kids/loops</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/for-kids/functions</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/for-kids/arrays</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/for-kids/objects</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.8</priority>
   </url>
+
   <url>
     <loc>https://www.basiccodingconcepts.online/for-kids/debugging</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2025-06-28</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.8</priority>
   </url>
 
 </urlset>
